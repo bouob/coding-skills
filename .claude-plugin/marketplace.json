@@ -10,9 +10,8 @@
   "plugins": [
     {
       "name": "coding",
-      "source": ".",
-      "description": "TDD workflows, SOLID principles, and structured code review.",
-      "version": "1.0.0"
+      "source": "./",
+      "description": "TDD workflows, SOLID principles, and structured code review."
     }
   ]
 }
