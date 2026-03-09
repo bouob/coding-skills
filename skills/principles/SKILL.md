@@ -99,10 +99,10 @@ description: >
 
 ## Python Standards
 
-- PEP 8 + type hints on all function signatures
-- Max function body: **60 lines** (excluding tests)
-- Google-style docstrings for all public functions
-- `@dataclass` for structured data instead of plain dicts
+- PEP 8 + type hints on all function signatures for new code. For legacy codebases, prioritize adding type hints to public API boundaries; do not require retroactive annotation of all existing functions.
+- Max function body: **60 lines** (excluding tests). Orchestration functions (multi-step workflows, state machines) may justify up to 100 lines when decomposition would obscure sequential logic.
+- Google-style docstrings for public API functions. Internal helpers with self-explanatory names and signatures may omit docstrings.
+- Structured data classes instead of plain dicts — when the shape is known at development time and stable. Use `@dataclass` (stdlib, zero dependency) for internal models, `pydantic.BaseModel` at trust boundaries requiring validation (API inputs, config files), or `attrs`/`msgspec` when advanced features or high throughput are needed. Plain dicts remain appropriate for dynamic config (JSON-loaded settings, migration-heavy schemas, runtime-extensible structures).
 **Import order:**
 1. stdlib (`os`, `sys`, `datetime`)
 2. Third-party (`requests`, `httpx`, `pydantic`)
@@ -119,8 +119,8 @@ description: >
 | No `any` | `unknown` used where type is uncertain |
 | Naming follows convention table | camelCase / PascalCase / snake_case applied correctly |
 | No barrel exports | `index.ts` does not re-export everything |
-| Function body within limit | ≤ 50 lines (TS) / ≤ 60 lines (Python) |
+| Function body within limit | ≤ 50 lines (TS) / ≤ 60 lines (Python, up to 100 for orchestration) |
 | Import order correct | Framework → external → internal → relative → type-only |
 | React: no class components | Only function components |
-| Python: type hints present | All public function signatures annotated |
+| Python: type hints present | New code and public API boundaries annotated |
 | Dependencies injected | No `new Dependency()` inside service constructors |

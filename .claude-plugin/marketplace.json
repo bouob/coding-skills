@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "coding",
+      "name": "coding-skills",
       "source": "./",
       "description": "TDD workflows, SOLID principles, and structured code review."
     }
