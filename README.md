@@ -5,10 +5,11 @@ A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) f
 ## Install
 
 ```bash
-# as a plugin (recommended)
-claude plugin add ./coding-skills
+# add as marketplace + install (recommended)
+/plugin marketplace add bouob/coding-skills
+/plugin install coding@coding-skills
 
-# or during development
+# or load directly during development
 claude --plugin-dir ./coding-skills
 ```
 
