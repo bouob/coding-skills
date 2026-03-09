@@ -2,7 +2,7 @@
 name: review
 description: >
   Review local code changes for style, test quality, and architecture.
-  Not for GitHub PR review (use /pr-review-toolkit:review-pr instead).
+  Not for GitHub PR review — use a dedicated PR review tool instead.
 argument-hint: [--staged | path | (empty=latest commit)]
 disable-model-invocation: true
 allowed-tools: Read, Grep, Glob,
