@@ -1,6 +1,7 @@
 ---
 name: fix
-description: Fix a bug using TDD. Diagnose root cause, write a failing test, then fix.
+description: >
+  Fix a bug using TDD. Diagnose root cause, write a failing test, then fix.
 argument-hint: [bug description | error message]
 disable-model-invocation: true
 allowed-tools: Read, Edit, Write, Grep, Glob,
