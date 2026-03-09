@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/bouob/coding-skills/compare/v1.0.1...v1.0.2) (2026-03-09)
+
+
+### Bug Fixes
+
+* add qualifying conditions to Python rules and rename plugin ([#5](https://github.com/bouob/coding-skills/issues/5)) ([b000cfd](https://github.com/bouob/coding-skills/commit/b000cfdc12eaad85b7eb489b8258e3b76768fc95))
+
 ## [1.0.1](https://github.com/bouob/coding-skills/compare/v1.0.0...v1.0.1) (2026-03-09)
 
 
