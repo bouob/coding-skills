@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/bouob/coding-skills/compare/v1.0.2...v1.1.0) (2026-03-12)
+
+
+### Features
+
+* **skills:** add debug and done skills ([#7](https://github.com/bouob/coding-skills/issues/7)) ([427346f](https://github.com/bouob/coding-skills/commit/427346f103b9ad0bd917cf47e9099a035c5d35a9))
+
 ## [1.0.2](https://github.com/bouob/coding-skills/compare/v1.0.1...v1.0.2) (2026-03-09)
 
 
