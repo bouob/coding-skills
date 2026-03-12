@@ -21,6 +21,7 @@ description: >
 
 ## Related Skills
 
+- **spec** — when no TypeScript interface exists yet; spec output becomes the first Red tests
 - **principles** — when testability depends on design decisions (DI, interface segregation)
 - **/fix** — when a bug needs a failing test before the fix
 - **/review** — when checking test quality of existing code
@@ -52,6 +53,7 @@ Follow all three steps in order. Do not skip or merge steps.
 **Red** — Write a failing test before any implementation.
 - Confirm: "The test fails because [specific reason]."
 - Do not write any production code yet.
+- In agentic workflows: a failing test is the clearest instruction you can give an AI — it defines exactly what "done" means and nothing more.
 
 **Green** — Write the minimum code that makes the test pass.
 - Confirm: "All tests pass."
@@ -60,6 +62,22 @@ Follow all three steps in order. Do not skip or merge steps.
 **Refactor** — Improve the code without changing behavior.
 - Confirm: "Tests still pass."
 - Now apply naming, structure, and duplication fixes.
+
+---
+
+## AI Agent Guardrails
+
+These rules apply whenever AI is writing or modifying code. Violation of any rule is a hard stop — revert and restart.
+
+| Signal | Risk Level | Action |
+|--------|-----------|--------|
+| AI proposes deleting a failing test | 🔴 Critical | Hard stop. Revert. The test must pass, not disappear. |
+| AI proposes `skip`, `todo`, or `pending` on a test to pass CI | 🔴 Critical | Hard stop. Same as deletion. |
+| AI weakens an assertion (e.g. `expect(result).toBeDefined()` replacing a specific value check) | 🔴 High | Hard stop. The assertion strength must not decrease. |
+| AI writes tests *after* writing implementation | 🟡 Caution | Test may confirm the wrong behaviour. Human review required before trusting results. |
+| CI is green but no test was written for the new behaviour | 🟡 Caution | Missing test, not a passing test. Treat as Red step not completed. |
+
+**The fundamental rule:** Tests constrain AI behaviour. A passing test suite with fewer tests is worse than a failing test suite with more tests.
 
 ---
 
@@ -137,3 +155,5 @@ Test your own code's behavior at integration boundaries — not the third-party 
 | No implementation detail testing | Tests use the public API, not private internals |
 | TDD order followed | Failing test written before production code |
 | Integration path exists | No code is tested only in isolation with no real usage path |
+| No deleted or skipped tests | Test count did not decrease; no new `skip`/`todo` added |
+| AI-generated code security check | If AI wrote significant code: reviewed for null guards, input validation, no hardcoded secrets |

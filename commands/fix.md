@@ -18,6 +18,7 @@ allowed-tools: Read, Edit, Write, Grep, Glob,
 |-------|-------------|
 | **testing** | Always — core skill for reproducing and verifying fixes |
 | **principles** | Root cause involves a design problem (SRP violation, missing DI, coupling) |
+| **done** | Always — verify tests pass and no regressions before claiming fixed |
 
 ## Step 1: Diagnose Root Cause
 

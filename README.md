@@ -1,6 +1,8 @@
 # coding-skills
 
-A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) for opinionated TypeScript, React, and Python development — TDD workflows, SOLID principles, and structured code review.
+[繁體中文](./README.zh-TW.md)
+
+A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) for opinionated TypeScript, React, and Python development — spec-driven interface design, TDD workflows, SOLID principles, and structured code review.
 
 ## Install
 
@@ -17,12 +19,26 @@ Commands: `/write`, `/fix`, `/review`, `/refactor`
 
 ## Skills
 
-Auto-loaded by Claude based on context. No manual invocation needed.
+Auto-loaded by commands based on context. Can also be invoked standalone.
 
-| Skill | Triggers when... |
-|-------|-----------------|
-| `principles` | Designing features, architecture decisions, interface boundaries |
-| `testing` | Implementing features, fixing bugs, changing behavior |
+| Skill | When auto-loaded | Standalone |
+|-------|-----------------|------------|
+| `spec` | `/write` when interface is undefined (Spec Gate triggered) | `/spec` |
+| `principles` | Designing features, architecture decisions, SOLID violations | — |
+| `testing` | Implementing features, fixing bugs, changing behavior | — |
+| `debug` | Diagnosing bugs in `/fix` | `/debug` |
+| `done` | End of any workflow that produces code changes | `/done` |
+
+### Which skills each command loads
+
+| Command | `spec` | `principles` | `testing` | `debug` | `done` |
+|---------|:---:|:---:|:---:|:---:|:---:|
+| `/write` | if Spec Gate¹ | always | always | — | always |
+| `/fix` | — | if design problem | always | always | always |
+| `/review` | — | always | always | — | — |
+| `/refactor` | — | if SOLID violation | always | — | always |
+
+> ¹ **Spec Gate** — three questions before writing code: (1) Is this a bug fix or internal change? (2) Does a TypeScript interface already exist? (3) Can you name 3+ boundary cases immediately? If all YES → skip spec, go straight to TDD. Any NO → load `spec` first.
 
 ## Commands
 
@@ -45,7 +61,11 @@ Auto-loaded by Claude based on context. No manual invocation needed.
 ## Workflow
 
 ```
-/write "add user auth"  →  plan  →  confirm  →  TDD cycles  →  /review
+/write "add user auth"
+  → Spec Gate (interface defined? boundary cases clear?)
+      YES → plan → confirm → TDD cycles → /review
+      NO  → /spec (interface + invariants) → TDD cycles → /review
+
 /fix "login crash"      →  diagnose  →  confirm  →  Red/Green/Refactor  →  /review
 /refactor src/auth/     →  smell analysis  →  confirm  →  incremental transforms  →  /review
 ```
