@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/bouob/coding-skills/compare/v1.1.0...v1.2.0) (2026-03-12)
+
+
+### Features
+
+* **coding-skills:** add spec skill, Spec Gate, and AI Guardrails ([#9](https://github.com/bouob/coding-skills/issues/9)) ([61fc8d1](https://github.com/bouob/coding-skills/commit/61fc8d18467047cd8df447c75805c24573bf5ac9))
+
+
+### Bug Fixes
+
+* restore release-please-manifest.json to 1.1.0 ([#11](https://github.com/bouob/coding-skills/issues/11)) ([466dfa9](https://github.com/bouob/coding-skills/commit/466dfa95ad6ed4666a22133b933bab1d23761bcc))
+
 ## [1.1.0](https://github.com/bouob/coding-skills/compare/v1.0.2...v1.1.0) (2026-03-12)
 
 
