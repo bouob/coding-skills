@@ -17,8 +17,10 @@ allowed-tools: Read, Edit, Write, Grep, Glob,
 
 | Skill | When to load |
 |-------|-------------|
+| **spec** | When the Spec Gate says NO (see Step 2) |
 | **principles** | Always — design decisions are part of every feature |
 | **testing** | Always when the feature introduces new behavior (almost always) |
+| **done** | Always — run verification before claiming the feature is complete |
 
 ## Step 1: Understand the Context
 
@@ -30,11 +32,25 @@ Read the relevant files before writing any code.
 - Look at existing patterns in adjacent code (`git log --oneline -10` for recent context)
 - Do NOT read framework source code — only application code
 
-## Step 2: Load Skills
+## Step 2: Spec Gate — TDD or SDD First?
 
-Apply the Skills Rubric above. Load both skills for any feature with new behavior.
+Before loading skills or writing any plan, answer these three questions:
 
-## Step 3: Plan Mode — TDD Task Breakdown
+| Question | If YES |
+|----------|--------|
+| Is this a bug fix or internal change that does not touch the public interface? | Skip spec → go to Step 3 |
+| Does a TypeScript interface / function signature already exist for this? | Skip spec → go to Step 3 |
+| Can you name 3+ boundary cases right now without thinking hard? | Skip spec → go to Step 3 |
+
+**If you could not answer YES to any question → load `spec` skill now. Complete the spec output (behaviour description + interface + invariants) before continuing.**
+
+When spec is complete, return here. The invariants become the first test cases in Step 4.
+
+## Step 3: Load Skills
+
+Apply the Skills Rubric. Load `principles` and `testing` always. `spec` only if Spec Gate triggered it.
+
+## Step 4: Plan Mode — TDD Task Breakdown
 
 Enter plan mode. Break the feature into the smallest meaningful tasks.
 

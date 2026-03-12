@@ -19,6 +19,7 @@ allowed-tools: Read, Edit, Write, Grep, Glob,
 |-------|-------------|
 | **testing** | Tests exist that cover the target — required before any refactoring |
 | **principles** | Refactoring addresses SOLID violations, naming, or dependency direction |
+| **done** | Always — verify tests still pass and no regressions after refactoring |
 
 ## Step 1: Analyze Code Smells
 
