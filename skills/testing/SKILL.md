@@ -2,8 +2,8 @@
 name: testing
 description: >
   Apply TDD and integration-first testing philosophy.
-  Use when implementing new features, fixing bugs, or changing behavior.
-  Covers test type selection, TDD cycle, and common test smells.
+  This skill should be used when implementing new features, fixing bugs, changing behavior,
+  writing tests, or when asking about test structure, test smells, or which test type to use.
   Skip for pure refactoring with existing test coverage.
 ---
 
