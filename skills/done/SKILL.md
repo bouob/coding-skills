@@ -1,10 +1,7 @@
 ---
 name: done
-description: >
-  Verification gate before claiming work is complete, fixed, or passing.
-  This skill should be used before committing, creating PRs, moving to next task,
-  or when asking "is this done?", "are tests passing?", "ready to commit?".
-  Evidence before claims — always run verification commands first.
+description: 'Verification gate before claiming work is complete, fixed, or passing. This skill should be used before committing, creating PRs, moving to next task, or when asking "is this done?", "are tests passing?", "ready to commit?". Evidence before claims — always run verification commands first.'
+user-invocable: false
 ---
 
 # Verification Before Completion
@@ -22,6 +19,8 @@ If you haven't run the verification command in this message, you cannot claim it
 ## Related Skills
 
 - **debug** — if verification fails, use this to find root cause before fixing
+
+This skill is loaded as a gate by **/fix**, **/write**, and **/refactor**. It does not need to be invoked directly when using those workflows.
 
 ---
 
@@ -63,4 +62,4 @@ Identify the project's test, lint, and build commands from:
 - CI config (`.github/workflows/`) → the commands CI runs
 - README → quick start or development section
 
-Run the **full** verification chain (lint + test + build), not just one step.
+Run the **full** verification chain available in the project (lint + test + build where applicable), not just one step.

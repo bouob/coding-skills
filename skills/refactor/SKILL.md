@@ -1,8 +1,6 @@
 ---
 name: refactor
-description: >
-  Clean up existing code by identifying smells and applying safe refactoring.
-  Behavior must not change. For bug fixes use /fix. For new features use /write.
+description: 'Clean up existing code by identifying smells and applying safe refactoring. Behavior must not change. This skill should be used when the user asks to "refactor", "clean up code", "simplify", "extract function", "reduce complexity", or mentions code smells, tech debt, or structural improvements. For bug fixes use /fix. For new features use /write.'
 argument-hint: [path | module]
 disable-model-invocation: true
 allowed-tools: Read, Edit, Write, Grep, Glob,

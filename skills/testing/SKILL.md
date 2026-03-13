@@ -1,10 +1,7 @@
 ---
 name: testing
-description: >
-  Apply TDD and integration-first testing philosophy.
-  This skill should be used when implementing new features, fixing bugs, changing behavior,
-  writing tests, or when asking about test structure, test smells, or which test type to use.
-  Skip for pure refactoring with existing test coverage.
+description: 'Apply TDD and integration-first testing philosophy. This skill should be used when implementing new features, fixing bugs, changing behavior, writing tests, or when asking about test structure, test smells, or which test type to use. Skip for pure refactoring with existing test coverage.'
+user-invocable: false
 ---
 
 # Testing Philosophy

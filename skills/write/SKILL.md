@@ -1,8 +1,6 @@
 ---
 name: write
-description: >
-  Implement a small to medium feature with TDD approach.
-  For large features requiring architecture exploration, consider a feature-dev plugin.
+description: 'Implement a small to medium feature with TDD approach. This skill should be used when the user asks to "write a feature", "implement", "add functionality", "build", or describes a new feature to create. For large features requiring architecture exploration, consider a feature-dev plugin.'
 argument-hint: [feature description]
 disable-model-invocation: true
 allowed-tools: Read, Edit, Write, Grep, Glob,
