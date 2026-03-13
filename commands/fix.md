@@ -16,6 +16,7 @@ allowed-tools: Read, Edit, Write, Grep, Glob,
 
 | Skill | When to load |
 |-------|-------------|
+| **debug** | Always — systematic root cause investigation before fixing |
 | **testing** | Always — core skill for reproducing and verifying fixes |
 | **principles** | Root cause involves a design problem (SRP violation, missing DI, coupling) |
 | **done** | Always — verify tests pass and no regressions before claiming fixed |

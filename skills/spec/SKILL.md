@@ -2,11 +2,9 @@
 name: spec
 description: >
   Define the interface contract before writing any implementation code.
-  Always use this skill when any of the following are true: the TypeScript interface or
-  function signature does not yet exist; the public API or return type is changing;
-  you cannot immediately name 3+ boundary cases without stopping to think.
-  If you are about to write a new function, class, or module and no interface exists yet —
-  load this skill before writing a single line of implementation.
+  This skill should be used when the TypeScript interface or function signature does not
+  yet exist, the public API or return type is changing, or you cannot immediately name 3+
+  boundary cases without stopping to think.
   Output: behaviour description (Given/When/Then), TypeScript interface, invariants list.
   Do NOT use for internal refactoring or bug fixes where the public interface is unchanged.
 ---
@@ -164,14 +162,6 @@ When using the reverse path:
 3. Delete or rewrite the exploratory code, now following the spec → TDD flow
 
 The Spec Gate already covers this: if the interface exists after exploration, Q2 is YES and you skip to `/testing`.
-
----
-
-## Positioning
-
-This skill operates at the **spec-first** level: write the spec, then implement. It does not attempt to keep the spec in sync with code automatically (spec-anchored) or generate code from the spec (spec-as-source). For those workflows, use dedicated tools like Amazon Kiro or Tessl.
-
-Spec-first is the right level for CLI plugins and small teams — low ceremony, high leverage.
 
 ---
 

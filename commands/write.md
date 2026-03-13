@@ -60,7 +60,7 @@ Enter plan mode. Break the feature into the smallest meaningful tasks.
 
 **Wait for user confirmation before writing any code.**
 
-## Step 4: Implement (Red → Green → Refactor per task)
+## Step 5: Implement (Red → Green → Refactor per task)
 
 For each task in the breakdown:
 
@@ -73,7 +73,7 @@ For each task in the breakdown:
 **Refactor** — Clean up without changing behavior.
 - Confirm: "Tests still pass."
 
-## Step 5: Completion Check
+## Step 6: Completion Check
 
 Verify against both skill rubrics:
 

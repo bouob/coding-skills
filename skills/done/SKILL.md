@@ -2,7 +2,8 @@
 name: done
 description: >
   Verification gate before claiming work is complete, fixed, or passing.
-  Use before committing, creating PRs, or moving to next task.
+  This skill should be used before committing, creating PRs, moving to next task,
+  or when asking "is this done?", "are tests passing?", "ready to commit?".
   Evidence before claims — always run verification commands first.
 ---
 
@@ -54,12 +55,12 @@ Before claiming any status or expressing satisfaction:
 - Relying on a previous run from earlier in the session
 - "Partial check is enough"
 
-## This Project's Verification Commands
+## Finding Verification Commands
 
-```bash
-# Blog / Fintech UI / PostFlow
-npm run lint && npm run build
+Identify the project's test, lint, and build commands from:
+- `package.json` → `scripts` section (`test`, `lint`, `build`)
+- `Makefile` or `pyproject.toml` → test/lint targets
+- CI config (`.github/workflows/`) → the commands CI runs
+- README → quick start or development section
 
-# Python signals
-.venv\Scripts\python.exe -m pytest  # if tests exist
-```
+Run the **full** verification chain (lint + test + build), not just one step.

@@ -2,8 +2,9 @@
 name: principles
 description: >
   Apply coding principles for TypeScript, React, and Python.
-  Use when designing new features, making architecture decisions,
-  defining interface boundaries, or choosing dependency direction.
+  This skill should be used when designing new features, making architecture decisions,
+  defining interface boundaries, choosing dependency direction, or asking about naming
+  conventions, import order, function length limits, or SOLID principles.
   Do NOT use for refactoring existing code (use /refactor) or bug fixes (use /fix).
 ---
 
@@ -103,6 +104,7 @@ description: >
 - Max function body: **60 lines** (excluding tests). Orchestration functions (multi-step workflows, state machines) may justify up to 100 lines when decomposition would obscure sequential logic.
 - Google-style docstrings for public API functions. Internal helpers with self-explanatory names and signatures may omit docstrings.
 - Structured data classes instead of plain dicts — when the shape is known at development time and stable. Use `@dataclass` (stdlib, zero dependency) for internal models, `pydantic.BaseModel` at trust boundaries requiring validation (API inputs, config files), or `attrs`/`msgspec` when advanced features or high throughput are needed. Plain dicts remain appropriate for dynamic config (JSON-loaded settings, migration-heavy schemas, runtime-extensible structures).
+
 **Import order:**
 1. stdlib (`os`, `sys`, `datetime`)
 2. Third-party (`requests`, `httpx`, `pydantic`)
