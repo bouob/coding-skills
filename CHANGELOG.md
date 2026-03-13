@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/bouob/coding-skills/compare/v1.2.0...v1.2.1) (2026-03-13)
+
+
+### Bug Fixes
+
+* update testing and spec skills with cross-model validation findings ([#13](https://github.com/bouob/coding-skills/issues/13)) ([e667343](https://github.com/bouob/coding-skills/commit/e667343629affc3e63de2a64482e5258d1688032))
+
 ## [1.2.0](https://github.com/bouob/coding-skills/compare/v1.1.0...v1.2.0) (2026-03-12)
 
 
