@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/bouob/coding-skills/compare/v1.2.1...v1.2.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* verify marketplace.json version sync in release-please ([#16](https://github.com/bouob/coding-skills/issues/16)) ([8444a98](https://github.com/bouob/coding-skills/commit/8444a98c414784335ba9af21db013f84e8177abc))
+
 ## [1.2.1](https://github.com/bouob/coding-skills/compare/v1.2.0...v1.2.1) (2026-03-13)
 
 
