@@ -1,12 +1,6 @@
 ---
 name: spec
-description: >
-  Define the interface contract before writing any implementation code.
-  This skill should be used when the TypeScript interface or function signature does not
-  yet exist, the public API or return type is changing, or you cannot immediately name 3+
-  boundary cases without stopping to think.
-  Output: behaviour description (Given/When/Then), TypeScript interface, invariants list.
-  Do NOT use for internal refactoring or bug fixes where the public interface is unchanged.
+description: 'Define the interface contract before writing any implementation code. This skill should be used when the TypeScript interface or function signature does not yet exist, the public API or return type is changing, or you cannot immediately name 3+ boundary cases without stopping to think. Output: behaviour description (Given/When/Then), TypeScript interface, invariants list. Do NOT use for internal refactoring or bug fixes where the public interface is unchanged.'
 ---
 
 # Spec — Interface Contract Definition

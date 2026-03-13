@@ -15,19 +15,30 @@
 claude --plugin-dir ./coding-skills
 ```
 
-指令：`/write`、`/fix`、`/review`、`/refactor`
+Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`
 
 ## Skills
 
-由指令根據情境自動載入，也可單獨呼叫。
+### 工作流程 Skills（手動呼叫）
 
-| Skill | 自動載入時機 | 單獨呼叫 |
-|-------|------------|---------|
-| `spec` | `/write` 時介面尚未定義（Spec Gate 觸發） | `/spec` |
-| `principles` | 設計新功能、架構決策、SOLID 違反 | — |
-| `testing` | 實作功能、修復錯誤、改變行為 | — |
-| `debug` | 在 `/fix` 中診斷錯誤根因 | `/debug` |
-| `done` | 任何產出程式碼變更的工作流程結尾 | `/done` |
+| Skill | 用途 |
+|-------|------|
+| `/write <功能描述>` | 以 TDD 方式實作功能 |
+| `/fix <錯誤描述>` | 修復錯誤（診斷 → Red → Green → Refactor） |
+| `/review [--staged \| path]` | 審查本地變更（風格、測試、架構） |
+| `/refactor [path \| module]` | 安全重構，含壞味道分析與 TDD 驗證 |
+| `/debug <錯誤描述>` | 系統性根因調查，在修復前先找出問題 |
+| `/spec <功能描述>` | 定義介面契約（Given/When/Then + TypeScript interface + 不變量） |
+
+### 方法論 Skills（由工作流程自動載入）
+
+不會出現在 `/` 選單，Claude 在需要時自動載入。
+
+| Skill | 自動載入時機 |
+|-------|------------|
+| `principles` | 設計新功能、架構決策、SOLID 違反 |
+| `testing` | 實作功能、修復錯誤、改變行為 |
+| `done` | 任何產出程式碼變更的工作流程結尾 |
 
 ### 各指令載入的 Skills
 
@@ -40,23 +51,13 @@ claude --plugin-dir ./coding-skills
 
 > ¹ **Spec Gate** — 寫程式碼前的三個問題：(1) 這是 bug fix 或介面不變的修改嗎？(2) TypeScript interface 已存在嗎？(3) 現在就能列出 3 個以上的邊界案例嗎？三問全 YES → 跳過 spec 直接 TDD。任一 NO → 先載入 `spec`。
 
-## 指令
-
-| 指令 | 用途 |
-|------|------|
-| `/write <功能描述>` | 以 TDD 方式實作功能 |
-| `/fix <錯誤描述>` | 修復錯誤（診斷 → Red → Green → Refactor） |
-| `/review [--staged \| path]` | 審查本地變更（風格、測試、架構） |
-| `/refactor [path \| module]` | 安全重構，含壞味道 (Code Smell) 分析與 TDD 驗證 |
-
 ## 運作原理
 
-**兩層架構** — Skills 提供知識，指令提供工作流程。
+**兩層架構** — 工作流程 Skills 提供步驟化流程，方法論 Skills 提供知識。
 
-- **Skills** 具有 **適用規則**（何時使用）與 **完成規則**（如何驗證）
-- **指令** 使用編號步驟加上明確確認關卡 — Claude 在你核准計畫前不會撰寫任何程式碼
-- 指令根據情境動態載入 Skills（例如 `/fix` 總是載入 `testing`，若根因涉及設計問題則額外載入 `principles`）
-- 所有指令皆設定 `disable-model-invocation: true` — 不會意外自動觸發
+- **工作流程 Skills** 使用編號步驟加上明確確認關卡 — Claude 在你核准計畫前不會撰寫任何程式碼
+- **方法論 Skills** 由工作流程根據情境自動載入（例如 `/fix` 總是載入 `testing`，若根因涉及設計問題則額外載入 `principles`）
+- 工作流程 Skills 皆設定 `disable-model-invocation: true` — 不會意外自動觸發
 
 ## 工作流程
 

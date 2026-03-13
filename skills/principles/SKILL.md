@@ -1,11 +1,7 @@
 ---
 name: principles
-description: >
-  Apply coding principles for TypeScript, React, and Python.
-  This skill should be used when designing new features, making architecture decisions,
-  defining interface boundaries, choosing dependency direction, or asking about naming
-  conventions, import order, function length limits, or SOLID principles.
-  Do NOT use for refactoring existing code (use /refactor) or bug fixes (use /fix).
+description: 'Apply coding principles for TypeScript, React, and Python. This skill should be used when designing new features, making architecture decisions, defining interface boundaries, choosing dependency direction, or asking about naming conventions, import order, function length limits, or SOLID principles. Do NOT use for refactoring existing code (use /refactor) or bug fixes (use /fix).'
+user-invocable: false
 ---
 
 # Coding Principles
