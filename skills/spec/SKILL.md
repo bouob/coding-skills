@@ -31,7 +31,9 @@ If you reach the end without skipping → run this skill before any implementati
 
 ### Step 1 — Behaviour Description
 
-Write 1–3 sentences in natural language. Follow this structure (no Gherkin syntax required, just the logic):
+Write 1–3 sentences in natural language. This step uses BDD's Given/When/Then thinking structure as the backbone for describing behavior — not the Gherkin toolchain, just the reasoning pattern.
+
+Follow this structure (no Gherkin syntax required, just the logic):
 
 ```
 Given [the starting condition or context],
@@ -144,6 +146,32 @@ Hand off to `/testing`: the interface is the input to the TDD cycle.
 | Forgetting error cases in the interface | Errors become implicit throws, untestable contracts | Define error types explicitly |
 | Writing invariants as "it should..." | Vague, not verifiable | Write as falsifiable statements |
 | Using `any` in the interface | Escapes the contract, spec loses its value | Use `unknown` or define the shape |
+| Spec written once then never updated | Stale spec misleads more than no spec — implementation drifts silently | When implementation deviates from spec, update the spec first before continuing. Spec Gate's self-restraint (skip for small changes) is the first defense against drift. |
+
+---
+
+## Reverse Path: Exploration → Spec
+
+The default flow is spec → implementation. But AI excels at rapid prototyping — sometimes you need to explore first, then extract a spec.
+
+This is valid when:
+- Technology choice is uncertain (need a spike to verify feasibility)
+- The problem shape only becomes clear through implementation
+
+When using the reverse path:
+1. Write exploratory code (no tests needed yet)
+2. Once the shape is clear, **stop and run this skill** to extract the interface
+3. Delete or rewrite the exploratory code, now following the spec → TDD flow
+
+The Spec Gate already covers this: if the interface exists after exploration, Q2 is YES and you skip to `/testing`.
+
+---
+
+## Positioning
+
+This skill operates at the **spec-first** level: write the spec, then implement. It does not attempt to keep the spec in sync with code automatically (spec-anchored) or generate code from the spec (spec-as-source). For those workflows, use dedicated tools like Amazon Kiro or Tessl.
+
+Spec-first is the right level for CLI plugins and small teams — low ceremony, high leverage.
 
 ---
 

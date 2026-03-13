@@ -53,6 +53,7 @@ Follow all three steps in order. Do not skip or merge steps.
 **Red** — Write a failing test before any implementation.
 - Confirm: "The test fails because [specific reason]."
 - Do not write any production code yet.
+- **Shadow Run:** run the test against the existing codebase before writing new code. It **must** fail. If it passes immediately, the test is invalid — it either tests existing behavior or contains no real assertion. Rewrite it.
 - In agentic workflows: a failing test is the clearest instruction you can give an AI — it defines exactly what "done" means and nothing more.
 
 **Green** — Write the minimum code that makes the test pass.
@@ -76,6 +77,7 @@ These rules apply whenever AI is writing or modifying code. Violation of any rul
 | AI weakens an assertion (e.g. `expect(result).toBeDefined()` replacing a specific value check) | 🔴 High | Hard stop. The assertion strength must not decrease. |
 | AI writes tests *after* writing implementation | 🟡 Caution | Test may confirm the wrong behaviour. Human review required before trusting results. |
 | CI is green but no test was written for the new behaviour | 🟡 Caution | Missing test, not a passing test. Treat as Red step not completed. |
+| AI-written test is a mirror of the implementation (same logic, just wrapped in `expect()`) | 🟡 Caution | Mirror test only verifies "code does what code does", not what it *should* do. Rewrite test based on spec/requirements, not implementation. |
 
 **The fundamental rule:** Tests constrain AI behaviour. A passing test suite with fewer tests is worse than a failing test suite with more tests.
 
@@ -91,6 +93,41 @@ These rules apply whenever AI is writing or modifying code. Violation of any rul
 | Service-to-service interaction | Integration | Tests contracts between layers |
 | Critical user journey | E2E | Validates the whole deployed stack |
 | UI component rendering | Unit (component test) | Fast feedback on visual structure |
+
+---
+
+## Property-Based Testing
+
+Example-based tests verify specific inputs → outputs. Property-based tests verify **invariants hold for all inputs**.
+
+AI-generated code is especially prone to passing hand-picked examples while failing on edge cases. Property tests catch this.
+
+**When to use:**
+
+| Situation | Example Property |
+|-----------|-----------------|
+| Pure function / data transformation | `sort(xs).length === xs.length` |
+| Mathematical / financial calculation | `total === sum of all line items` |
+| Encoding / decoding round-trip | `decode(encode(x)) === x` |
+| Invariant from `/spec` marked `✓` | Any invariant expressible as `for all x: P(x)` |
+
+**When NOT to use:** UI rendering, side-effectful code, integration boundaries.
+
+**Tools:** `fast-check` (TypeScript), `Hypothesis` (Python), `QuickCheck` (Haskell-family)
+
+```typescript
+import fc from 'fast-check'
+
+it('sort preserves array length', () => {
+  fc.assert(
+    fc.property(fc.array(fc.integer()), (xs) => {
+      expect(sort(xs)).toHaveLength(xs.length)
+    })
+  )
+})
+```
+
+Property tests complement example-based TDD — they do not replace it. Use both.
 
 ---
 
@@ -156,4 +193,6 @@ Test your own code's behavior at integration boundaries — not the third-party 
 | TDD order followed | Failing test written before production code |
 | Integration path exists | No code is tested only in isolation with no real usage path |
 | No deleted or skipped tests | Test count did not decrease; no new `skip`/`todo` added |
+| No mirror tests | Tests are derived from spec/requirements, not from reading the implementation |
+| Property tests for invariants (when applicable) | Pure functions and spec `✓` invariants expressible as `for all x: P(x)` have property tests |
 | AI-generated code security check | If AI wrote significant code: reviewed for null guards, input validation, no hardcoded secrets |
