@@ -15,7 +15,7 @@ A [Claude Code plugin](https://docs.anthropic.com/en/docs/claude-code/plugins) f
 claude --plugin-dir ./coding-skills
 ```
 
-Skills: `/write`, `/fix`, `/review`, `/refactor`, `/debug`, `/spec`
+Skills: `/write`, `/fix`, `/review`, `/refactor`, `/debug`, `/spec`, `/decision`
 
 ## Skills
 
@@ -29,6 +29,7 @@ Skills: `/write`, `/fix`, `/review`, `/refactor`, `/debug`, `/spec`
 | `/refactor [path \| module]` | Safe refactoring with smell analysis and TDD verification |
 | `/debug <error>` | Systematic root cause investigation before any fix |
 | `/spec <feature>` | Define interface contract (Given/When/Then + TypeScript interface + invariants) |
+| `/decision <A vs B>` | AI-era tech decision framework (4-dimension scoring + pre-mortem + exit plan) |
 
 ### Methodology Skills (auto-loaded by workflows)
 
@@ -42,12 +43,13 @@ These are not shown in the `/` menu. Claude loads them automatically when needed
 
 ### Which skills each command loads
 
-| Command | `spec` | `principles` | `testing` | `debug` | `done` |
-|---------|:---:|:---:|:---:|:---:|:---:|
-| `/write` | if Spec Gate¹ | always | always | — | always |
-| `/fix` | — | if design problem | always | always | always |
-| `/review` | — | always | always | — | — |
-| `/refactor` | — | if SOLID violation | always | — | always |
+| Command | `spec` | `principles` | `testing` | `debug` | `done` | `decision` |
+|---------|:---:|:---:|:---:|:---:|:---:|:---:|
+| `/write` | if Spec Gate¹ | always | always | — | always | — |
+| `/fix` | — | if design problem | always | always | always | — |
+| `/review` | — | always | always | — | — | — |
+| `/refactor` | — | if SOLID violation | always | — | always | — |
+| `/decision` | — | — | — | — | — | standalone |
 
 > ¹ **Spec Gate** — three questions before writing code: (1) Is this a bug fix or internal change? (2) Does a TypeScript interface already exist? (3) Can you name 3+ boundary cases immediately? If all YES → skip spec, go straight to TDD. Any NO → load `spec` first.
 

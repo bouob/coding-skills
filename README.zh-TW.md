@@ -15,7 +15,7 @@
 claude --plugin-dir ./coding-skills
 ```
 
-Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`
+Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`、`/decision`
 
 ## Skills
 
@@ -29,6 +29,7 @@ Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`
 | `/refactor [path \| module]` | 安全重構，含壞味道分析與 TDD 驗證 |
 | `/debug <錯誤描述>` | 系統性根因調查，在修復前先找出問題 |
 | `/spec <功能描述>` | 定義介面契約（Given/When/Then + TypeScript interface + 不變量） |
+| `/decision <A vs B>` | AI 時代技術決策框架（四維度評分 + 事前驗屍 + 退場方案） |
 
 ### 方法論 Skills（由工作流程自動載入）
 
@@ -42,12 +43,13 @@ Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`
 
 ### 各指令載入的 Skills
 
-| 指令 | `spec` | `principles` | `testing` | `debug` | `done` |
-|------|:---:|:---:|:---:|:---:|:---:|
-| `/write` | Spec Gate 觸發時¹ | 總是 | 總是 | — | 總是 |
-| `/fix` | — | 設計問題時 | 總是 | 總是 | 總是 |
-| `/review` | — | 總是 | 總是 | — | — |
-| `/refactor` | — | SOLID 違反時 | 總是 | — | 總是 |
+| 指令 | `spec` | `principles` | `testing` | `debug` | `done` | `decision` |
+|------|:---:|:---:|:---:|:---:|:---:|:---:|
+| `/write` | Spec Gate 觸發時¹ | 總是 | 總是 | — | 總是 | — |
+| `/fix` | — | 設計問題時 | 總是 | 總是 | 總是 | — |
+| `/review` | — | 總是 | 總是 | — | — | — |
+| `/refactor` | — | SOLID 違反時 | 總是 | — | 總是 | — |
+| `/decision` | — | — | — | — | — | 獨立使用 |
 
 > ¹ **Spec Gate** — 寫程式碼前的三個問題：(1) 這是 bug fix 或介面不變的修改嗎？(2) TypeScript interface 已存在嗎？(3) 現在就能列出 3 個以上的邊界案例嗎？三問全 YES → 跳過 spec 直接 TDD。任一 NO → 先載入 `spec`。
 
