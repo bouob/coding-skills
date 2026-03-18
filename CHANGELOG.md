@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/bouob/coding-skills/compare/v1.5.0...v1.5.1) (2026-03-18)
+
+
+### Bug Fixes
+
+* **ci:** use PAT for release-please to trigger downstream workflows ([#27](https://github.com/bouob/coding-skills/issues/27)) ([9c65085](https://github.com/bouob/coding-skills/commit/9c65085daa7b8120054df700bc7bdb78790e8363))
+
 ## [1.5.0](https://github.com/bouob/coding-skills/compare/v1.4.0...v1.5.0) (2026-03-18)
 
 
