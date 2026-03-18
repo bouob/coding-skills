@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/bouob/coding-skills/compare/v1.4.0...v1.5.0) (2026-03-18)
+
+
+### Features
+
+* **sync:** sync coding-skills updates 2026-03-19 ([#25](https://github.com/bouob/coding-skills/issues/25)) ([527f704](https://github.com/bouob/coding-skills/commit/527f704681bf5785dac56f84203cbda55217921b))
+* **sync:** sync updates from monorepo ([527f704](https://github.com/bouob/coding-skills/commit/527f704681bf5785dac56f84203cbda55217921b))
+
 ## [1.4.0](https://github.com/bouob/coding-skills/compare/v1.3.0...v1.4.0) (2026-03-17)
 
 
