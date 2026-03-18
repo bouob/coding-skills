@@ -71,6 +71,7 @@ These are not shown in the `/` menu. Claude loads them automatically when needed
 
 /fix "login crash"      →  diagnose  →  confirm  →  Red/Green/Refactor  →  /review
 /refactor src/auth/     →  smell analysis  →  confirm  →  incremental transforms  →  /review
+/decision "Supabase vs Firebase"  →  assumption audit  →  4-dimension scoring  →  pre-mortem  →  recommendation
 ```
 
 ## License

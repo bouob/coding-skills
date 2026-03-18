@@ -29,7 +29,7 @@ Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`、`/de
 | `/refactor [path \| module]` | 安全重構，含壞味道分析與 TDD 驗證 |
 | `/debug <錯誤描述>` | 系統性根因調查，在修復前先找出問題 |
 | `/spec <功能描述>` | 定義介面契約（Given/When/Then + TypeScript interface + 不變量） |
-| `/decision <A vs B>` | AI 時代技術決策框架（四維度評分 + 事前驗屍 + 退場方案） |
+| `/decision <A vs B>` | AI 時代技術決策框架（四維度評分 + 預想失敗分析 + 退場方案） |
 
 ### 方法論 Skills（由工作流程自動載入）
 
@@ -71,6 +71,7 @@ Skills：`/write`、`/fix`、`/review`、`/refactor`、`/debug`、`/spec`、`/de
 
 /fix "登入頁面當機"      →  診斷  →  確認  →  Red/Green/Refactor  →  /review
 /refactor src/auth/      →  壞味道 (Code Smell) 分析  →  確認  →  逐步重構  →  /review
+/decision "Supabase vs Firebase"  →  假設審查  →  四維度評分  →  預想失敗分析  →  建議
 ```
 
 ## 授權
