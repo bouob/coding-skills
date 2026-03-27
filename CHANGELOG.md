@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/bouob/coding-skills/compare/v1.5.1...v1.5.2) (2026-03-27)
+
+
+### Bug Fixes
+
+* **ci:** add refactor/perf/docs to release-please changelog sections ([#30](https://github.com/bouob/coding-skills/issues/30)) ([e94075f](https://github.com/bouob/coding-skills/commit/e94075f7d09d05c5ee9fe8e8d37c4e515bd08c3a))
+
 ## [1.5.1](https://github.com/bouob/coding-skills/compare/v1.5.0...v1.5.1) (2026-03-18)
 
 
