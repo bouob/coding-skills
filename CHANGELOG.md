@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/bouob/coding-skills/compare/v1.5.2...v1.6.0) (2026-04-04)
+
+
+### Features
+
+* **skills:** rename /debug to /diagnose for clarity ([#33](https://github.com/bouob/coding-skills/issues/33)) ([9085d2e](https://github.com/bouob/coding-skills/commit/9085d2e81dc1f7f3f789b9d33c26574a23160a4d))
+
 ## [1.5.2](https://github.com/bouob/coding-skills/compare/v1.5.1...v1.5.2) (2026-03-27)
 
 
