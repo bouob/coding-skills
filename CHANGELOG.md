@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.8.0](https://github.com/bouob/coding-skills/compare/v1.7.0...v1.8.0) (2026-06-05)
+
+
+### Features
+
+* **coding-skills:** add /pr-review skill for GitHub PR static risk review ([51f55ad](https://github.com/bouob/coding-skills/commit/51f55adcc32fb9aa6973d6fb357ab23c42743f22))
+* **coding-skills:** add spec skill, Spec Gate, and AI Guardrails ([08e9e2a](https://github.com/bouob/coding-skills/commit/08e9e2a55a52bc7995ec395635e9e47b5fe86feb))
+* **coding-skills:** sync updates 2026-06-06 ([826000d](https://github.com/bouob/coding-skills/commit/826000d4d43588b7c360adf17de996b674d4bdb5))
+
 ## [1.7.0](https://github.com/bouob/coding-skills/compare/v1.6.0...v1.7.0) (2026-06-05)
 
 
