@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/bouob/coding-skills/compare/v1.6.0...v1.7.0) (2026-06-05)
+
+
+### Features
+
+* **coding-skills:** add /pr-review skill for GitHub PR static risk review ([#38](https://github.com/bouob/coding-skills/issues/38)) ([cc04cca](https://github.com/bouob/coding-skills/commit/cc04cca120d262d7db006e5729a2c7486fe5cda9))
+
 ## [1.6.0](https://github.com/bouob/coding-skills/compare/v1.5.2...v1.6.0) (2026-04-04)
 
 
