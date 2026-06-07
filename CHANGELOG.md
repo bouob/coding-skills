@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/bouob/coding-skills/compare/v1.8.0...v1.8.1) (2026-06-07)
+
+
+### Bug Fixes
+
+* **pr-review:** trigger release for tool-agnostic workflow update ([6ccc958](https://github.com/bouob/coding-skills/commit/6ccc958bad93360fd807cea11dc79041fec21400))
+* **pr-review:** trigger release for tool-agnostic workflow update ([797e460](https://github.com/bouob/coding-skills/commit/797e4602b6d801a8af901c6fd596d1b952e3c6dc))
+
 ## [1.8.0](https://github.com/bouob/coding-skills/compare/v1.7.0...v1.8.0) (2026-06-05)
 
 
