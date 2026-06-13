@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/bouob/coding-skills/compare/v1.8.1...v1.9.0) (2026-06-13)
+
+
+### Features
+
+* **coding-skills:** add read-only PR-review specialist agents ([76242e1](https://github.com/bouob/coding-skills/commit/76242e1ce429ff334a17ff527e5de1377d8c0d61))
+* **coding-skills:** sync updates 2026-06-14 ([b82dd3d](https://github.com/bouob/coding-skills/commit/b82dd3dd8a24cbb245926161fa10a2d5c0218fe1))
+
 ## [1.8.1](https://github.com/bouob/coding-skills/compare/v1.8.0...v1.8.1) (2026-06-07)
 
 
