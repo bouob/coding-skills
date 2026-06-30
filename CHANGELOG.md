@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/bouob/coding-skills/compare/v1.9.0...v1.10.0) (2026-06-30)
+
+
+### Features
+
+* **coding-skills:** default /pr-review to parallel agent delegation ([6362b5a](https://github.com/bouob/coding-skills/commit/6362b5a35d881ad531d04b51fbe03145ddf9561b))
+* **coding-skills:** sync updates 2026-06-30 ([a4ce367](https://github.com/bouob/coding-skills/commit/a4ce3679a838370c63f075d7ed7972b98d6cccae))
+
 ## [1.9.0](https://github.com/bouob/coding-skills/compare/v1.8.1...v1.9.0) (2026-06-13)
 
 
