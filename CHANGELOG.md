@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/bouob/coding-skills/compare/v1.10.0...v1.11.0) (2026-07-01)
+
+
+### Features
+
+* **coding-skills:** pr-review always delegates all five specialist agents ([25ce9c5](https://github.com/bouob/coding-skills/commit/25ce9c596c55b4bca6af33f976eb05ba509524ad))
+* **coding-skills:** pr-review always delegates all five specialist agents ([0eb17f5](https://github.com/bouob/coding-skills/commit/0eb17f5d2b52f1d57e9a6ffff4f662808cd6990e))
+
 ## [1.10.0](https://github.com/bouob/coding-skills/compare/v1.9.0...v1.10.0) (2026-06-30)
 
 
