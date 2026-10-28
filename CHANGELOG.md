@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.12.0](https://github.com/bouob/coding-skills/compare/v1.11.0...v1.12.0) (2026-10-28)
+
+
+### Features
+
+* **coding-skills:** add coverage check and independent verification to pr-review ([aea10f1](https://github.com/bouob/coding-skills/commit/aea10f13ff1256b3498fa6e366336463e416b05c))
+* **coding-skills:** sync updates 2026-10-28 ([762a218](https://github.com/bouob/coding-skills/commit/762a218e0a01ccf4b906479748ec0a86dbe11f20))
+* **coding-skills:** tighten security-reviewer finding criteria ([8e87aa0](https://github.com/bouob/coding-skills/commit/8e87aa0f385df027e534e6f14aec719e562bafb5))
+
 ## [1.11.0](https://github.com/bouob/coding-skills/compare/v1.10.0...v1.11.0) (2026-07-01)
 
 
