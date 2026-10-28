@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.1](https://github.com/bouob/coding-skills/compare/v1.12.0...v1.12.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* **coding-skills:** enforce per-owner coverage and tighten verifier verdicts ([0bb06ec](https://github.com/bouob/coding-skills/commit/0bb06ec5cf3776040598f454acad633002aab684))
+* **coding-skills:** sync updates 2026-10-29 ([d48b98e](https://github.com/bouob/coding-skills/commit/d48b98e84102723922635ce8d33a788322cb6fa0))
+
 ## [1.12.0](https://github.com/bouob/coding-skills/compare/v1.11.0...v1.12.0) (2026-10-28)
 
 
