@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.13.0](https://github.com/bouob/coding-skills/compare/v1.12.1...v1.13.0) (2026-11-12)
+
+
+### Features
+
+* **coding-skills:** add local commit range mode and verdict line to pr-review ([8b0c232](https://github.com/bouob/coding-skills/commit/8b0c23200c3344501b512a5ced160b9979efa31a))
+* **coding-skills:** sync updates 2026-11-11 ([e879380](https://github.com/bouob/coding-skills/commit/e879380f97be7f44c79f093ab6a124c5dca29c67))
+
+
+### Bug Fixes
+
+* **coding-skills:** close verdict gaps found by reviewing pr-review itself ([d14c13e](https://github.com/bouob/coding-skills/commit/d14c13ef560f48e3f0cc42f12fe54fc499c9cd8c))
+
 ## [1.12.1](https://github.com/bouob/coding-skills/compare/v1.12.0...v1.12.1) (2026-10-28)
 
 
