@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.1](https://github.com/bouob/coding-skills/compare/v1.13.0...v1.13.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **coding-skills:** harden pr-review target resolution and verdict inputs ([4696af7](https://github.com/bouob/coding-skills/commit/4696af7a0fe9a8ce4a372507f7344decfcce85f3))
+* **coding-skills:** sync updates 2026-11-19 ([1567084](https://github.com/bouob/coding-skills/commit/1567084d3a43651e62bfbf882f7d03ed23d61c01))
+
 ## [1.13.0](https://github.com/bouob/coding-skills/compare/v1.12.1...v1.13.0) (2026-11-12)
 
 
